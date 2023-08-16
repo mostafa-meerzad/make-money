@@ -1,0 +1,76 @@
+body {
+  width: 100vw;
+  height: 100svh;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  background-color: hsl(0, 0%, 87%);
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  width: 20rem;
+}
+
+.logo {
+  height: 21rem;
+  position: relative;
+}
+.logo__icon {
+  background-image: url(./dolor.png);
+  background-position: center;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.logo__cover {
+  width: 65%;
+  height: 100%;
+  right: 52%;
+  position: absolute;
+  border-radius: 1.4rem;
+}
+.logo__cover--back {
+  width: 66%;
+  height: 101%;
+  right: 51%;
+  bottom: -1%;
+  border: 2px solid white;
+  z-index: -1;
+  filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.354);
+}
+.logo__cover--front {
+  background-color: hsla(0, 0%, 100%, 0);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.title {
+  margin-block: 0.8em 0.6em;
+  font-size: 2.5rem;
+  font-family: "Kanit", sans-serif;
+}
+
+.thoughts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thoughts__thought {
+  font-size: 0.75em;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.thoughts__line {
+  width: 1px;
+  height: 3em;
+  margin: 0.5em;
+  border: none;
+  background-color: black;
+}/*# sourceMappingURL=styles.css.map */
