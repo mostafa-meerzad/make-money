@@ -33,6 +33,7 @@ body {
   right: 52%;
   position: absolute;
   border-radius: 1.4rem;
+  animation: blur 2000ms ease forwards;
 }
 .logo__cover--back {
   width: 66%;
@@ -50,8 +51,16 @@ body {
   backdrop-filter: blur(20px);
 }
 
+@keyframes blur {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .title {
-  margin-block: 0.8em 0.6em;
+  margin-block: 0.8em 1.5em;
   font-size: 2.5rem;
   font-family: "Kanit", sans-serif;
 }
@@ -60,17 +69,70 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.thoughts::before {
+  content: "";
+  width: 6.2rem;
+  height: 1.5rem;
+  background-color: hsl(0, 0%, 87%);
+  position: absolute;
+  left: 10%;
 }
 .thoughts__thought {
   font-size: 0.75em;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
+  position: absolute;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.thoughts__thought:first-child {
+  width: 0;
+  right: 50%;
+  overflow: hidden;
+  z-index: 0;
+  animation-name: firstThought;
+}
+.thoughts__thought:last-child {
+  left: 30%;
+  z-index: -1;
+  animation-name: lastThought;
 }
 .thoughts__line {
   width: 1px;
-  height: 3em;
   margin: 0.5em;
   border: none;
   background-color: black;
+  position: absolute;
+  z-index: 2;
+  animation: visible 900ms 2000ms ease-in-out 1 forwards;
+}
+
+@keyframes firstThought {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30%;
+  }
+}
+@keyframes lastThought {
+  from {
+    left: 30%;
+  }
+  to {
+    left: 56%;
+  }
+}
+@keyframes visible {
+  from {
+    height: 0;
+  }
+  to {
+    height: 3rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
